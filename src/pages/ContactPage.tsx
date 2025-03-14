@@ -46,7 +46,7 @@ const ContactPage = () => {
   };
   
   return (
-    <div className="pt-16">
+    <div className="pt-16 relative">
       {/* Hero Section */}
       <section className="relative py-24 bg-trading-dark overflow-hidden">
         <ChartBackground />
@@ -240,6 +240,17 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating WhatsApp Button */}
+      <a 
+        href="https://wa.me/1234567890" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageSquare size={24} />
+      </a>
     </div>
   );
 };
