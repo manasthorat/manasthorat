@@ -136,87 +136,8 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Experience & Education */}
-      <section className="py-16 bg-trading-darker">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {/* Experience */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <Award className="mr-3 text-trading-accent" /> Experience
-              </h2>
-              
-              <div className="space-y-12">
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2021 - Present</div>
-                  <h3 className="text-lg font-semibold text-white">Independent Trading Solutions Developer</h3>
-                  <p className="text-gray-400 mt-2">
-                    Developing custom Pine Script indicators, Python trading systems, and algorithmic strategies for traders and financial firms worldwide.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2019 - 2021</div>
-                  <h3 className="text-lg font-semibold text-white">Trading Systems Developer at XYZ Trading</h3>
-                  <p className="text-gray-400 mt-2">
-                    Led the development of proprietary trading algorithms and backtesting frameworks, helping the firm achieve a 42% improvement in strategy performance.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2017 - 2019</div>
-                  <h3 className="text-lg font-semibold text-white">Python Developer at FinTech Solutions</h3>
-                  <p className="text-gray-400 mt-2">
-                    Built data analysis tools and trading systems integrations for institutional clients in the forex and cryptocurrency markets.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Education */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <BookOpen className="mr-3 text-trading-accent" /> Education & Certifications
-              </h2>
-              
-              <div className="space-y-12">
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2020</div>
-                  <h3 className="text-lg font-semibold text-white">Advanced Algorithmic Trading</h3>
-                  <p className="text-gray-400 mt-2">
-                    Certification in advanced algorithmic trading strategies and system development.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2018</div>
-                  <h3 className="text-lg font-semibold text-white">Python for Financial Analysis</h3>
-                  <p className="text-gray-400 mt-2">
-                    Specialized certification focusing on Python applications in financial markets and trading.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l border-gray-700">
-                  <div className="absolute w-4 h-4 bg-trading-accent rounded-full -left-2 top-0"></div>
-                  <div className="mb-1 text-trading-accent">2016</div>
-                  <h3 className="text-lg font-semibold text-white">B.Tech in Computer Science</h3>
-                  <p className="text-gray-400 mt-2">
-                    Bachelor's degree with specialization in algorithmic development and data structures.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* Testimonials */}
-      <section className="py-16 bg-trading-dark">
+      <section className="py-16 bg-trading-darker">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-white text-center mb-16">What Clients Say</h2>
           

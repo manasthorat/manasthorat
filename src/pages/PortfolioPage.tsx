@@ -1,8 +1,8 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
-import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 // Define portfolio items and their categories
 const portfolioItems = [
@@ -187,118 +187,6 @@ const PortfolioPage = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Case Study */}
-      <section className="py-24 bg-trading-dark">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-white text-center mb-16">Featured Case Study</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <YouTubeEmbed 
-                videoId="qr_fB_FPfKA" 
-                title="MACD Strategy Demonstration" 
-                className="rounded-lg shadow-xl mb-4" 
-              />
-              <div className="grid grid-cols-2 gap-4">
-                <div className="overflow-hidden rounded-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3" 
-                    alt="MACD Strategy Chart" 
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-4.0.3" 
-                    alt="Backtesting Results" 
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white">Advanced MACD Strategy</h3>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="text-xs px-2 py-1 bg-trading-chart text-gray-300 rounded-full">
-                  Pine Script
-                </span>
-                <span className="text-xs px-2 py-1 bg-trading-chart text-gray-300 rounded-full">
-                  Strategy
-                </span>
-                <span className="text-xs px-2 py-1 bg-trading-chart text-gray-300 rounded-full">
-                  Trend Following
-                </span>
-              </div>
-              
-              <div className="space-y-4 text-gray-300">
-                <p>
-                  This project involved developing a sophisticated MACD-based trading strategy for a client who wanted to improve their trend-following system with better entry and exit signals.
-                </p>
-                
-                <h4 className="text-xl font-semibold text-white mt-6">Challenge</h4>
-                <p>
-                  The client's existing MACD strategy had too many false signals in choppy markets, resulting in numerous small losses that eroded overall performance.
-                </p>
-                
-                <h4 className="text-xl font-semibold text-white mt-6">Solution</h4>
-                <p>
-                  I developed a custom Pine Script strategy that:
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Combined MACD with volume analysis to filter out low-quality signals</li>
-                  <li>Added adaptive parameters that adjusted based on market volatility</li>
-                  <li>Implemented smart trailing stops that locked in profits while giving trades room to breathe</li>
-                  <li>Integrated market regime filters to avoid trading during unfavorable conditions</li>
-                </ul>
-                
-                <h4 className="text-xl font-semibold text-white mt-6">Results</h4>
-                <p>
-                  The enhanced strategy significantly improved performance:
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>48% increase in win rate</li>
-                  <li>35% reduction in drawdown</li>
-                  <li>67% increase in risk-adjusted returns</li>
-                  <li>Consistent performance across multiple market conditions</li>
-                </ul>
-                
-                <div className="mt-8">
-                  <div className="bg-trading-chart rounded-md p-4 mt-8">
-                    <div className="flex items-center mb-3 text-xs text-gray-400">
-                      <div className="flex space-x-1.5 mr-3">
-                        <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
-                        <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
-                        <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
-                      </div>
-                      <div>Pine Script</div>
-                    </div>
-                    
-                    <div className="space-y-1.5">
-                      <div className="text-blue-400 text-sm">// Pine Script Strategy</div>
-                      <div className="text-gray-300 text-sm">strategy(<span className="text-green-400">"MACD Strategy"</span>, overlay=<span className="text-yellow-400">true</span>)</div>
-                      <div className="text-gray-300 text-sm font-mono">
-                        <span className="text-purple-400">fastLength</span> = input(<span className="text-yellow-400">12</span>)
-                      </div>
-                      <div className="text-gray-300 text-sm font-mono">
-                        <span className="text-purple-400">slowLength</span> = input(<span className="text-yellow-400">26</span>)
-                      </div>
-                      <div className="text-gray-300 text-sm font-mono">
-                        <span className="text-purple-400">signalLength</span> = input(<span className="text-yellow-400">9</span>)
-                      </div>
-                      <div className="text-gray-300 text-sm font-mono">
-                        [<span className="text-purple-400">macd</span>, <span className="text-purple-400">signal</span>, <span className="text-purple-400">hist</span>] = macd(<span className="text-purple-400">close</span>, <span className="text-purple-400">fastLength</span>, <span className="text-purple-400">slowLength</span>, <span className="text-purple-400">signalLength</span>)
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
