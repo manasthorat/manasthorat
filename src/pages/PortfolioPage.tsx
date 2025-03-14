@@ -269,7 +269,33 @@ const PortfolioPage = () => {
                 </ul>
                 
                 <div className="mt-8">
-                  <CodeSnippet language="pine" className="mt-8" />
+                  <div className="bg-trading-chart rounded-md p-4 mt-8">
+                    <div className="flex items-center mb-3 text-xs text-gray-400">
+                      <div className="flex space-x-1.5 mr-3">
+                        <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
+                        <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
+                        <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
+                      </div>
+                      <div>Pine Script</div>
+                    </div>
+                    
+                    <div className="space-y-1.5">
+                      <div className="text-blue-400 text-sm">// Pine Script Strategy</div>
+                      <div className="text-gray-300 text-sm">strategy(<span className="text-green-400">"MACD Strategy"</span>, overlay=<span className="text-yellow-400">true</span>)</div>
+                      <div className="text-gray-300 text-sm font-mono">
+                        <span className="text-purple-400">fastLength</span> = input(<span className="text-yellow-400">12</span>)
+                      </div>
+                      <div className="text-gray-300 text-sm font-mono">
+                        <span className="text-purple-400">slowLength</span> = input(<span className="text-yellow-400">26</span>)
+                      </div>
+                      <div className="text-gray-300 text-sm font-mono">
+                        <span className="text-purple-400">signalLength</span> = input(<span className="text-yellow-400">9</span>)
+                      </div>
+                      <div className="text-gray-300 text-sm font-mono">
+                        [<span className="text-purple-400">macd</span>, <span className="text-purple-400">signal</span>, <span className="text-purple-400">hist</span>] = macd(<span className="text-purple-400">close</span>, <span className="text-purple-400">fastLength</span>, <span className="text-purple-400">slowLength</span>, <span className="text-purple-400">signalLength</span>)
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
