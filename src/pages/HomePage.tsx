@@ -1,8 +1,8 @@
 
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, LineChart, Terminal, Zap } from 'lucide-react';
-import CodeSnippet from '@/components/CodeSnippet';
 import ChartBackground from '@/components/ChartBackground';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 const HomePage = () => {
   return (
@@ -29,10 +29,11 @@ const HomePage = () => {
               </div>
             </div>
             <div className="relative animate-float">
-              <CodeSnippet language="pine" className="shadow-lg shadow-blue-500/10" />
-              <div className="absolute -right-6 -bottom-6 z-0">
-                <CodeSnippet language="python" className="shadow-lg shadow-blue-500/10 transform scale-95 opacity-75" />
-              </div>
+              <YouTubeEmbed 
+                videoId="qr_fB_FPfKA" 
+                title="Pine Script and Python Trading Strategy" 
+                className="shadow-lg shadow-blue-500/10" 
+              />
             </div>
           </div>
         </div>

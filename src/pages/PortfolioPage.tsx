@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
-import CodeSnippet from '@/components/CodeSnippet';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 // Define portfolio items and their categories
 const portfolioItems = [
@@ -199,14 +198,12 @@ const PortfolioPage = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <div className="overflow-hidden rounded-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1642790556613-33e73b9fbee2?ixlib=rb-4.0.3" 
-                  alt="MACD Strategy Performance" 
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4 mt-4">
+              <YouTubeEmbed 
+                videoId="qr_fB_FPfKA" 
+                title="MACD Strategy Demonstration" 
+                className="rounded-lg shadow-xl mb-4" 
+              />
+              <div className="grid grid-cols-2 gap-4">
                 <div className="overflow-hidden rounded-lg">
                   <img 
                     src="https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3" 
