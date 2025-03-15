@@ -9,6 +9,11 @@ interface TradingViewChartProps {
   scriptUrl?: string;
   isScript?: boolean;
   className?: string;
+  theme?: 'light' | 'dark';
+  autosize?: boolean;
+  enablePublishing?: boolean;
+  hideSideToolbar?: boolean;
+  hideTopToolbar?: boolean;
 }
 
 const TradingViewChart: React.FC<TradingViewChartProps> = ({
@@ -19,6 +24,11 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
   scriptUrl,
   isScript = false,
   className = '',
+  theme = 'dark',
+  autosize = false,
+  enablePublishing = false,
+  hideSideToolbar = false,
+  hideTopToolbar = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -32,21 +42,22 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
         if (isScript && scriptUrl) {
           // Create script chart
           new window.TradingView.widget({
-            "width": width,
-            "height": height,
+            "autosize": autosize,
+            "width": autosize ? "100%" : width,
+            "height": autosize ? "100%" : height,
             "symbol": symbol,
             "interval": "D",
             "timezone": "Etc/UTC",
-            "theme": "dark",
+            "theme": theme,
             "style": "1",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "hide_top_toolbar": false,
+            "enable_publishing": enablePublishing,
+            "hide_top_toolbar": hideTopToolbar,
             "allow_symbol_change": true,
             "studies": ["MASimple@tv-basicstudies"],
             "container_id": chartId,
-            "hide_side_toolbar": false,
+            "hide_side_toolbar": hideSideToolbar,
             "withdateranges": true,
             "save_image": false,
             "show_popup_button": true,
@@ -57,20 +68,22 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
         } else {
           // Create regular chart
           new window.TradingView.widget({
-            "width": width,
-            "height": height,
+            "autosize": autosize,
+            "width": autosize ? "100%" : width,
+            "height": autosize ? "100%" : height,
             "symbol": symbol,
             "interval": "D",
             "timezone": "Etc/UTC",
-            "theme": "dark",
+            "theme": theme,
             "style": "1",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "hide_top_toolbar": false,
+            "enable_publishing": enablePublishing,
+            "hide_top_toolbar": hideTopToolbar,
             "allow_symbol_change": true,
             "studies": ["MASimple@tv-basicstudies", "MACD@tv-basicstudies"],
-            "container_id": chartId
+            "container_id": chartId,
+            "hide_side_toolbar": hideSideToolbar
           });
         }
       }
@@ -88,11 +101,11 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
         widgetContainer.innerHTML = '';
       }
     };
-  }, [symbol, width, height, chartId, scriptUrl, isScript]);
+  }, [symbol, width, height, chartId, scriptUrl, isScript, theme, autosize, enablePublishing, hideSideToolbar, hideTopToolbar]);
 
   return (
     <div className={`tradingview-chart-container rounded-lg overflow-hidden border border-trading-chart ${className}`}>
-      <div id={chartId} ref={containerRef} />
+      <div id={chartId} ref={containerRef} style={{ height: autosize ? '100%' : height }} />
     </div>
   );
 };

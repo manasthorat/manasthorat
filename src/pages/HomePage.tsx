@@ -1,10 +1,16 @@
 
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, LineChart, Terminal, Zap } from 'lucide-react';
+import { ArrowRight, Code, LineChart, Terminal, Zap, X } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { useState } from 'react';
+import TradingViewChart from '@/components/TradingViewChart';
 
 const HomePage = () => {
+  const [showMACDChart, setShowMACDChart] = useState(false);
+  const [showArbitrageChart, setShowArbitrageChart] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -117,7 +123,10 @@ const HomePage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="portfolio-item group">
-              <div className="relative overflow-hidden rounded-md mb-4">
+              <div 
+                className="relative overflow-hidden rounded-md mb-4 cursor-pointer" 
+                onClick={() => setShowMACDChart(true)}
+              >
                 <img 
                   src="https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3" 
                   alt="Trading View Chart" 
@@ -125,7 +134,7 @@ const HomePage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
                   <div className="p-4">
-                    <span className="text-white font-medium">View Project</span>
+                    <span className="text-white font-medium">View Chart</span>
                   </div>
                 </div>
               </div>
@@ -138,7 +147,10 @@ const HomePage = () => {
             </div>
             
             <div className="portfolio-item group">
-              <div className="relative overflow-hidden rounded-md mb-4">
+              <div 
+                className="relative overflow-hidden rounded-md mb-4 cursor-pointer"
+                onClick={() => setShowArbitrageChart(true)}
+              >
                 <img 
                   src="https://images.unsplash.com/photo-1642790456351-558440324a99?ixlib=rb-4.0.3" 
                   alt="Python Trading Bot" 
@@ -146,7 +158,7 @@ const HomePage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
                   <div className="p-4">
-                    <span className="text-white font-medium">View Project</span>
+                    <span className="text-white font-medium">View Chart</span>
                   </div>
                 </div>
               </div>
@@ -179,6 +191,44 @@ const HomePage = () => {
           </Link>
         </div>
       </section>
+
+      {/* Dialog for MACD Strategy Chart */}
+      <Dialog open={showMACDChart} onOpenChange={setShowMACDChart}>
+        <DialogContent className="sm:max-w-[900px] bg-trading-dark text-white border-trading-chart">
+          <DialogHeader>
+            <DialogTitle className="text-white">Advanced MACD Strategy</DialogTitle>
+          </DialogHeader>
+          <div className="h-[500px] w-full">
+            <TradingViewChart 
+              chartId="macd-strategy-chart" 
+              isScript={true}
+              scriptUrl="https://in.tradingview.com/script/KITeiAhh-Qualified-Swing-High-Low-Pattern-Detector-with-FVG/"
+              autosize={true}
+              hideTopToolbar={false}
+              hideSideToolbar={false}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Dialog for Arbitrage Bot Chart */}
+      <Dialog open={showArbitrageChart} onOpenChange={setShowArbitrageChart}>
+        <DialogContent className="sm:max-w-[900px] bg-trading-dark text-white border-trading-chart">
+          <DialogHeader>
+            <DialogTitle className="text-white">Crypto Arbitrage Bot</DialogTitle>
+          </DialogHeader>
+          <div className="h-[500px] w-full">
+            <TradingViewChart 
+              chartId="arbitrage-bot-chart" 
+              isScript={true}
+              scriptUrl="https://in.tradingview.com/script/KITeiAhh-Qualified-Swing-High-Low-Pattern-Detector-with-FVG/"
+              autosize={true}
+              hideTopToolbar={false}
+              hideSideToolbar={false}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
