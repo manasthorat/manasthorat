@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Phone, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
 import { toast } from '@/components/ui/use-toast';
 
@@ -92,26 +92,6 @@ const ContactPage = () => {
                     <p className="text-gray-400">
                       <a href="tel:+1234567890" className="hover:text-trading-accent transition-colors">
                         +1 (234) 567-890
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-trading-chart p-3 rounded-lg mr-4">
-                    <MessageSquare className="text-trading-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">Chat Now</h3>
-                    <p className="text-gray-400">
-                      <a 
-                        href="https://wa.me/1234567890" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center bg-green-600 text-white px-4 py-2 mt-2 rounded-md hover:bg-green-700 transition-colors"
-                      >
-                        <MessageSquare size={18} className="mr-2" />
-                        WhatsApp
                       </a>
                     </p>
                   </div>
@@ -240,17 +220,6 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-      
-      {/* Floating WhatsApp Button */}
-      <a 
-        href="https://wa.me/1234567890" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageSquare size={24} />
-      </a>
     </div>
   );
 };

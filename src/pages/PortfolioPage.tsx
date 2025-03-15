@@ -50,8 +50,24 @@ const portfolioItems = [
     id: 6,
     title: 'MT5 Expert Advisor',
     description: 'Python-based expert advisor for MetaTrader 5 with custom risk management rules.',
-    categories: ['python', 'bot'],
+    categories: ['python', 'bot', 'mt5'],
     image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3',
+    link: '#',
+  },
+  {
+    id: 7,
+    title: 'NinjaTrader Strategy Suite',
+    description: 'Advanced futures trading strategy for NinjaTrader with multiple entry and exit conditions.',
+    categories: ['ninjatrader', 'strategy'],
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3',
+    link: '#',
+  },
+  {
+    id: 8,
+    title: 'MT5 Indicator Pack',
+    description: 'Custom MetaTrader 5 indicator pack designed for forex and futures traders with multi-timeframe analysis.',
+    categories: ['mt5', 'indicator'],
+    image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3',
     link: '#',
   },
 ];
@@ -112,6 +128,26 @@ const PortfolioPage = () => {
               }`}
             >
               Python
+            </button>
+            <button 
+              onClick={() => setFilter('mt5')}
+              className={`px-5 py-2 rounded-full transition-colors ${
+                filter === 'mt5' 
+                  ? 'bg-trading-accent text-white' 
+                  : 'bg-trading-chart text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              MetaTrader 5
+            </button>
+            <button 
+              onClick={() => setFilter('ninjatrader')}
+              className={`px-5 py-2 rounded-full transition-colors ${
+                filter === 'ninjatrader' 
+                  ? 'bg-trading-accent text-white' 
+                  : 'bg-trading-chart text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              NinjaTrader
             </button>
             <button 
               onClick={() => setFilter('strategy')}
