@@ -1,9 +1,8 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ArrowDown, ArrowUp } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
-import TradingViewChart from '@/components/TradingViewChart';
 
 // Define portfolio items and their categories
 const portfolioItems = [
@@ -14,10 +13,6 @@ const portfolioItems = [
     categories: ['pine-script', 'strategy'],
     image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: true,
-    chartId: 'macd-chart',
-    scriptUrl: 'https://in.tradingview.com/script/KITeiAhh-Qualified-Swing-High-Low-Pattern-Detector-with-FVG/',
-    symbol: 'NASDAQ:AAPL'
   },
   {
     id: 2,
@@ -26,10 +21,6 @@ const portfolioItems = [
     categories: ['python', 'bot'],
     image: 'https://images.unsplash.com/photo-1642790456351-558440324a99?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: true,
-    chartId: 'arbitrage-chart',
-    scriptUrl: 'https://in.tradingview.com/script/KITeiAhh-Qualified-Swing-High-Low-Pattern-Detector-with-FVG/',
-    symbol: 'BINANCE:BTCUSDT'
   },
   {
     id: 3,
@@ -38,7 +29,6 @@ const portfolioItems = [
     categories: ['pine-script', 'indicator'],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
   {
     id: 4,
@@ -47,7 +37,6 @@ const portfolioItems = [
     categories: ['python', 'analysis'],
     image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
   {
     id: 5,
@@ -56,7 +45,6 @@ const portfolioItems = [
     categories: ['pine-script', 'strategy'],
     image: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
   {
     id: 6,
@@ -65,7 +53,6 @@ const portfolioItems = [
     categories: ['python', 'bot', 'mt5'],
     image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
   {
     id: 7,
@@ -74,7 +61,6 @@ const portfolioItems = [
     categories: ['ninjatrader', 'strategy'],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
   {
     id: 8,
@@ -83,27 +69,17 @@ const portfolioItems = [
     categories: ['mt5', 'indicator'],
     image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3',
     link: '#',
-    hasChart: false
   },
 ];
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('all');
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   
   // Filter items based on selected category
   const filteredItems = filter === 'all' 
     ? portfolioItems 
     : portfolioItems.filter(item => item.categories.includes(filter));
   
-  const toggleItemExpand = (itemId: number) => {
-    setExpandedItems(prev => 
-      prev.includes(itemId) 
-        ? prev.filter(id => id !== itemId)
-        : [...prev, itemId]
-    );
-  };
-
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -208,8 +184,8 @@ const PortfolioPage = () => {
           {/* Portfolio Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <div key={item.id} className="portfolio-item group bg-trading-chart/30 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden mb-4">
+              <div key={item.id} className="portfolio-item group">
+                <div className="relative overflow-hidden rounded-md mb-4">
                   <img 
                     src={item.image} 
                     alt={item.title} 
@@ -229,47 +205,21 @@ const PortfolioPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-5">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {item.title}
-                    </h3>
-                    {item.hasChart && (
-                      <button 
-                        onClick={() => toggleItemExpand(item.id)}
-                        className="text-trading-accent hover:text-white transition-colors"
-                        aria-label={expandedItems.includes(item.id) ? "Collapse chart" : "Expand chart"}
-                      >
-                        {expandedItems.includes(item.id) ? <ArrowUp size={18} /> : <ArrowDown size={18} />}
-                      </button>
-                    )}
-                  </div>
-                  <p className="text-gray-400 mb-3">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.categories.map((cat) => (
-                      <span 
-                        key={cat} 
-                        className="text-xs px-2 py-1 bg-trading-chart text-gray-300 rounded-full"
-                      >
-                        {cat.split('-').join(' ')}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  {/* TradingView Chart (conditionally rendered) */}
-                  {item.hasChart && expandedItems.includes(item.id) && (
-                    <div className="mt-4 rounded-md overflow-hidden animate-fade-in">
-                      <TradingViewChart 
-                        chartId={item.chartId}
-                        symbol={item.symbol}
-                        height={300}
-                        isScript={true}
-                        scriptUrl={item.scriptUrl}
-                      />
-                    </div>
-                  )}
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 mb-3">
+                  {item.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {item.categories.map((cat) => (
+                    <span 
+                      key={cat} 
+                      className="text-xs px-2 py-1 bg-trading-chart text-gray-300 rounded-full"
+                    >
+                      {cat.split('-').join(' ')}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
