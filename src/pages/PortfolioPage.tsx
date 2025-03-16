@@ -11,7 +11,7 @@ const portfolioItems = [
     title: 'Advanced MACD Strategy',
     description: 'A Pine Script strategy that combines MACD with volume analysis for enhanced signal accuracy.',
     categories: ['pine-script', 'strategy'],
-    image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3',
+    image: 'https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?q=80&w=2155&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     link: '#',
   },
   {
@@ -19,7 +19,7 @@ const portfolioItems = [
     title: 'Crypto Arbitrage Bot',
     description: 'Python-based bot that identifies and executes on arbitrage opportunities across multiple exchanges.',
     categories: ['python', 'bot'],
-    image: 'https://images.unsplash.com/photo-1642790456351-558440324a99?ixlib=rb-4.0.3',
+    image: 'https://media.istockphoto.com/id/1273360314/photo/future-financial-technology-controlled-by-ai-robot-using-machine-learning-and-artificial.jpg?s=1024x1024&w=is&k=20&c=23_hUut92ouA-8BPDiSi958FYT02nb7AlRlEQMly-S0=',
     link: '#',
   },
   {
@@ -67,7 +67,7 @@ const portfolioItems = [
     title: 'MT5 Indicator Pack',
     description: 'Custom MetaTrader 5 indicator pack designed for forex and futures traders with multi-timeframe analysis.',
     categories: ['mt5', 'indicator'],
-    image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3',
+    image: 'https://www.forex.academy/wp-content/uploads/2020/07/Screenshot_5-22.jpg',
     link: '#',
   },
 ];

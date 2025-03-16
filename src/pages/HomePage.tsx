@@ -30,7 +30,7 @@ const HomePage = () => {
             </div>
             <div className="relative animate-float">
               <YouTubeEmbed 
-                videoId="qr_fB_FPfKA" 
+                videoId="bMSAkJUbM9Y" 
                 title="Pine Script and Python Trading Strategy" 
                 className="shadow-lg shadow-blue-500/10" 
               />
@@ -116,48 +116,58 @@ const HomePage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="portfolio-item group">
-              <div className="relative overflow-hidden rounded-md mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1642790551116-18e150f248e4?ixlib=rb-4.0.3" 
-                  alt="Trading View Chart" 
-                  className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
-                  <div className="p-4">
-                    <span className="text-white font-medium">View Project</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Advanced MACD Strategy
-              </h3>
-              <p className="text-gray-400">
-                A Pine Script strategy that combines MACD with volume analysis for enhanced signal accuracy.
-              </p>
-            </div>
-            
-            <div className="portfolio-item group">
-              <div className="relative overflow-hidden rounded-md mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1642790456351-558440324a99?ixlib=rb-4.0.3" 
-                  alt="Python Trading Bot" 
-                  className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
-                  <div className="p-4">
-                    <span className="text-white font-medium">View Project</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Crypto Arbitrage Bot
-              </h3>
-              <p className="text-gray-400">
-                Python-based bot that identifies and executes on arbitrage opportunities across multiple exchanges.
-              </p>
-            </div>
-          </div>
+  <a 
+    href="https://in.tradingview.com/script/KITeiAhh-Qualified-Swing-High-Low-Pattern-Detector-with-FVG/" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="portfolio-item group block"
+  >
+    <div className="relative overflow-hidden rounded-md mb-4">
+      <img 
+        src="/qrb.png" 
+        alt="Trading View Chart" 
+        className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
+        <div className="p-4">
+          <span className="text-white font-medium">View on TradingView</span>
+        </div>
+      </div>
+    </div>
+    <h3 className="text-xl font-semibold text-white mb-2">
+      Qualified Swing High/Low Pattern Detector with FVG
+    </h3>
+    <p className="text-gray-400">
+      This technical indicator combines swing point detection, fair value gap (FVG) identification, and pattern recognition to create a comprehensive strategy for identifying high-probability trading opportunities.
+    </p>
+  </a>
+  
+  <a 
+    href="https://in.tradingview.com/script/H8XfJIeV-ORB-with-Exit-Conditions/" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="portfolio-item group block"
+  >
+    <div className="relative overflow-hidden rounded-md mb-4">
+      <img 
+        src="/orb.png" 
+        alt="Python Trading Bot" 
+        className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
+        <div className="p-4">
+          <span className="text-white font-medium">View on TradingView</span>
+        </div>
+      </div>
+    </div>
+    <h3 className="text-xl font-semibold text-white mb-2">
+      ORB Breakout Strategy
+    </h3>
+    <p className="text-gray-400">
+      The "ORB with Exit Conditions" strategy is designed to identify breakout opportunities during a specific session and automatically trigger buy/sell signals based on the opening range breakout (ORB) method, along with various exit conditions.
+    </p>
+  </a>
+</div>
           
           <div className="text-center mt-12">
             <Link to="/portfolio" className="btn-primary">

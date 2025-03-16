@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, Send } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
@@ -22,27 +21,45 @@ const ContactPage = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/xrbpbbow', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
       toast({
-        title: "Message sent successfully!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
   
   return (
@@ -76,8 +93,8 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-white font-medium mb-1">Email</h3>
                     <p className="text-gray-400">
-                      <a href="mailto:contact@example.com" className="hover:text-trading-accent transition-colors">
-                        contact@example.com
+                      <a href="mailto:manaskthorat@gmail.com" className="hover:text-trading-accent transition-colors">
+                        manaskthorat@gmail.com
                       </a>
                     </p>
                   </div>
@@ -90,8 +107,8 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-white font-medium mb-1">Phone</h3>
                     <p className="text-gray-400">
-                      <a href="tel:+1234567890" className="hover:text-trading-accent transition-colors">
-                        +1 (234) 567-890
+                      <a href="tel:+91 8087351423" className="hover:text-trading-accent transition-colors">
+                        +91 8087351423
                       </a>
                     </p>
                   </div>

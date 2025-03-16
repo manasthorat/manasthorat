@@ -55,7 +55,7 @@ const AboutPage = () => {
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn-outline py-2">
                   <Linkedin size={20} className="mr-2" /> LinkedIn
                 </a>
-                <a href="mailto:contact@example.com" className="btn-outline py-2">
+                <a href="mailto:manaskthorat@gmail.com" className="btn-outline py-2">
                   <Mail size={20} className="mr-2" /> Email
                 </a>
               </div>

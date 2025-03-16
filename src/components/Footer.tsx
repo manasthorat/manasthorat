@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-trading-accent transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:contact@example.com" className="text-gray-400 hover:text-trading-accent transition-colors">
+              <a href="mailto:manaskthorat@gmail.com" className="text-gray-400 hover:text-trading-accent transition-colors">
                 <Mail size={20} />
               </a>
             </div>
@@ -54,7 +54,7 @@ const Footer = () => {
               Feel free to reach out for collaborations or just a friendly chat.
             </p>
             <p className="text-gray-400">
-              Email: contact@example.com
+              Email: manaskthorat@gmail.com
             </p>
             <Link to="/contact" className="btn-outline mt-4">Get in Touch</Link>
           </div>
