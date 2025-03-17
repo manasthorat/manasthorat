@@ -41,7 +41,7 @@ const AboutPage = () => {
               </h3>
               
               <p className="text-gray-300">
-                I'm a specialized developer with expertise in Pine Script (TradingView) and Python-based trading systems. My journey in the financial markets began over 6 years ago, where I discovered my passion for combining programming with trading strategies.
+                I'm a specialized developer with expertise in Pine Script (TradingView) and Python-based trading systems. My journey in the financial markets began over 3 years ago, where I discovered my passion for combining programming with trading strategies.
               </p>
               
               <p className="text-gray-300">
@@ -49,10 +49,10 @@ const AboutPage = () => {
               </p>
               
               <div className="flex space-x-4 pt-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="btn-outline py-2">
+                <a href="https://github.com/manasthorat" target="_blank" rel="noopener noreferrer" className="btn-outline py-2">
                   <Github size={20} className="mr-2" /> Github
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn-outline py-2">
+                <a href="https://www.linkedin.com/in/manas-thorat-/" target="_blank" rel="noopener noreferrer" className="btn-outline py-2">
                   <Linkedin size={20} className="mr-2" /> LinkedIn
                 </a>
                 <a href="mailto:manaskthorat@gmail.com" className="btn-outline py-2">
@@ -172,8 +172,8 @@ const AboutPage = () => {
               <p className="text-gray-300 mb-4">
                 "The Python trading bot Manas built for our cryptocurrency trading desk has been incredibly reliable. His attention to detail and focus on risk management really sets him apart from other developers we've worked with."
               </p>
-              <div className="font-semibold text-white">Sarah M.</div>
-              <div className="text-sm text-gray-400">Crypto Fund Manager</div>
+              <div className="font-semibold text-white">Yash G.</div>
+              <div className="text-sm text-gray-400">Indian Equity Trader</div>
             </div>
             
             <div className="bg-trading-chart p-6 rounded-lg border border-gray-700">
@@ -187,10 +187,10 @@ const AboutPage = () => {
                 </div>
               </div>
               <p className="text-gray-300 mb-4">
-                "Working with Manas has been a game-changer for our trading firm. His expertise in both Pine Script and Python allowed us to implement a comprehensive trading system that has significantly improved our results."
+                "Working with Manas has been a game-changer. His expertise in both Pine Script and Python allowed us to implement a comprehensive trading system that has significantly improved our results."
               </p>
               <div className="font-semibold text-white">Michael K.</div>
-              <div className="text-sm text-gray-400">Hedge Fund Analyst</div>
+              <div className="text-sm text-gray-400">Trader</div>
             </div>
           </div>
         </div>
