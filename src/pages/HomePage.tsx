@@ -125,7 +125,6 @@ const HomePage = () => {
     <div className="relative overflow-hidden rounded-md mb-4">
       <img 
         src="/qrb.png" 
-        alt="Trading View Chart" 
         className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
