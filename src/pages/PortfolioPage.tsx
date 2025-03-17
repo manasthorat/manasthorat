@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github } from 'lucide-react';
 import ChartBackground from '@/components/ChartBackground';
 
 // Define portfolio items and their categories
@@ -68,6 +67,22 @@ const portfolioItems = [
     description: 'Custom MetaTrader 5 indicator pack designed for forex and futures traders with multi-timeframe analysis.',
     categories: ['mt5', 'indicator'],
     image: 'https://www.forex.academy/wp-content/uploads/2020/07/Screenshot_5-22.jpg',
+    link: '#',
+  },
+  {
+    id: 9,
+    title: 'ML-Powered Market Regime Detector',
+    description: 'Machine learning model that identifies market regimes (trending, ranging, volatile) to adapt trading strategies accordingly.',
+    categories: ['machine-learning', 'analysis'],
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop',
+    link: '#',
+  },
+  {
+    id: 10,
+    title: 'Automated Backtesting Report Generator',
+    description: 'Python tool that generates comprehensive backtesting reports with performance metrics, equity curves, and drawdown analysis.',
+    categories: ['python', 'backtesting'],
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop',
     link: '#',
   },
 ];
@@ -179,6 +194,26 @@ const PortfolioPage = () => {
             >
               Trading Bots
             </button>
+            <button 
+              onClick={() => setFilter('machine-learning')}
+              className={`px-5 py-2 rounded-full transition-colors ${
+                filter === 'machine-learning' 
+                  ? 'bg-trading-accent text-white' 
+                  : 'bg-trading-chart text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              Machine Learning
+            </button>
+            <button 
+              onClick={() => setFilter('backtesting')}
+              className={`px-5 py-2 rounded-full transition-colors ${
+                filter === 'backtesting' 
+                  ? 'bg-trading-accent text-white' 
+                  : 'bg-trading-chart text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              Backtesting
+            </button>
           </div>
           
           {/* Portfolio Grid */}
@@ -189,21 +224,8 @@ const PortfolioPage = () => {
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-trading-dark to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full flex justify-between items-center">
-                      <span className="text-white font-medium">View Details</span>
-                      <div className="flex gap-2">
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-trading-accent p-1">
-                          <ExternalLink size={20} />
-                        </a>
-                        <a href="#" className="text-white hover:text-trading-accent p-1">
-                          <Github size={20} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {item.title}
